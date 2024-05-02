@@ -1,0 +1,15 @@
+---
+- name: Uninstall mysql on all nodes
+  hosts: all
+  user: ansible
+
+  tasks:
+  - name: install mysql
+    ansible.builtin.dnf:
+      name:
+         - "mysql.x86_64"
+         - "mysql-common.x86_64"
+         - "mysql-errmsg.x86_64"
+         - "mysql-selinux.noarch"
+         - "mysql-server.x86_64"
+      state: "absent"
