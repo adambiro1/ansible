@@ -1,0 +1,13 @@
+---
+- name: find files on host
+  hosts: managed1
+
+  tasks:
+  - name: Find files that contain adam
+    ansible.builtin.find:
+      paths: "/etc"
+      contains: "adam"
+      file_type: "file"
+      get_checksum: true
+      hidden: true
+      recurse: yes
