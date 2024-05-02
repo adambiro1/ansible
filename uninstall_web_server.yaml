@@ -1,0 +1,10 @@
+---
+- name: uninstall web server
+  hosts: managed1
+
+  tasks:
+  - name: uninstall apache
+    ansible.builtin.dnf:
+      name: httpd
+      autoremove: true
+      state: absent
