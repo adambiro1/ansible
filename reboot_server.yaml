@@ -1,0 +1,12 @@
+---
+- name: Reboot server
+  hosts: managed1
+  user: ansible
+
+  tasks:
+  - name : rebbot centos server
+    ansible.builtin.command: /sbin/reboot
+    when: ansible_facts['distribution'] == "CentOS"
+
+
+...
