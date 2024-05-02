@@ -1,0 +1,12 @@
+---
+- name: Shutdown server
+  hosts: all
+  user: ansible
+
+  tasks:
+  - name : poweroff all centos servers
+    ansible.builtin.command: "/sbin/poweroff"
+    when: ansible_facts['distribution'] == "CentOS"
+
+
+...
