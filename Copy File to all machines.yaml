@@ -1,0 +1,14 @@
+---
+- name: Copy File to all machines
+  hosts: all
+  user: ansible
+
+  tasks:
+  -  name: copy file from specific dir
+     ansible.builtin.copy:
+       src: "/home/ansible/testfile.txt"
+       dest: "/tmp"
+       owner: "adam"
+       group: "wheel"
+       mode: "0644"
+       backup: true
