@@ -1,0 +1,11 @@
+---
+- name: Fetch files from managed node
+  hosts: managed1
+  user: ansible
+
+  tasks:
+  - name: Fetch files from managed node
+    ansible.builtin.fetch:
+     src: "/home/adam/managed1file.txt"
+     dest: "/home/ansible/"
+     fail_on_missing: true
