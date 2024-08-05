@@ -1,0 +1,4 @@
+myhosts:
+  hosts:
+    rhel_8:
+      ansible_host: 192.168.122.74
